@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#24144d">
+  <title>星屑ガールズ・ダンジョン</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <main class="game-shell">
+    <header class="title-card">
+      <p class="eyebrow">放置ハクスラRPG</p>
+      <h1>星屑ガールズ<br><span>・ダンジョン・</span></h1>
+      <div class="top-resources">
+        <span>🪙 <strong id="gold">0</strong> G</span>
+        <span>🏰 地下 <strong id="floor">1</strong> 階</span>
+      </div>
+    </header>
+
+    <section class="card hero-card">
+      <div class="hero-visual">
+        <span class="orbit orbit-one">✦</span>
+        <span class="orbit orbit-two">★</span>
+        <div class="hero-emoji" aria-label="星の魔法使い見習いミルカ">🧙‍♀️</div>
+        <div class="hero-wand">🌟</div>
+      </div>
+      <div class="hero-info">
+        <div class="name-row">
+          <div>
+            <span class="mini-label">星の魔法使い見習い</span>
+            <h2>ミルカ</h2>
+          </div>
+          <span class="level-badge">Lv.<strong id="level">1</strong></span>
+        </div>
+        <div class="meter-block">
+          <div class="meter-label"><span>HP</span><strong><span id="hp">30</span> / <span id="maxHp">30</span></strong></div>
+          <div class="meter hp-meter"><div id="hpBar"></div></div>
+        </div>
+        <div class="meter-block">
+          <div class="meter-label"><span>EXP</span><strong><span id="exp">0</span> / <span id="nextExp">20</span></strong></div>
+          <div class="meter exp-meter"><div id="expBar"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-heading"><h2>ステータス</h2><span>✨ 成長中</span></div>
+      <div class="stat-grid">
+        <div><span>⚔️ 攻撃力</span><strong id="attack">0</strong></div>
+        <div><span>🛡️ 防御力</span><strong id="defense">0</strong></div>
+        <div><span>🔮 魔力</span><strong id="magic">0</strong></div>
+        <div><span>🍀 運</span><strong id="luck">0</strong></div>
+      </div>
+    </section>
+
+    <section class="card equipment-card">
+      <div class="section-heading"><h2>装備</h2><span>🎀 おまかせ装備</span></div>
+      <div class="equipment-row">
+        <span class="equipment-icon">🪄</span>
+        <div><span>武器</span><strong id="weaponName">木のステッキ</strong></div>
+        <em id="weaponPower">+1</em>
+      </div>
+      <div class="equipment-row">
+        <span class="equipment-icon">👗</span>
+        <div><span>服</span><strong id="armorName">見習いローブ</strong></div>
+        <em id="armorPower">+1</em>
+      </div>
+    </section>
+
+    <section class="explore-zone">
+      <button id="exploreButton" class="explore-button" type="button">
+        <span>探索する</span>
+        <small>星降るダンジョンへ ✦</small>
+      </button>
+    </section>
+
+    <section class="card">
+      <div class="section-heading"><h2>ショップ</h2><span>🛍️ 永久強化</span></div>
+      <div id="shopButtons" class="shop-grid">
+        <button type="button" data-upgrade="hp"><span>💗 HP強化</span><strong></strong></button>
+        <button type="button" data-upgrade="attack"><span>⚔️ 攻撃力強化</span><strong></strong></button>
+        <button type="button" data-upgrade="magic"><span>🔮 魔力強化</span><strong></strong></button>
+        <button type="button" data-upgrade="defense"><span>🛡️ 防御力強化</span><strong></strong></button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-heading">
+        <h2>衣装コレクション</h2>
+        <span id="collectionCount">1 / 16</span>
+      </div>
+      <p class="collection-note">拾った服が図鑑に登録されます。</p>
+      <div id="collectionGrid" class="collection-grid"></div>
+    </section>
+
+    <section class="card log-card">
+      <div class="section-heading"><h2>冒険ログ</h2><span>📖 最新10件</span></div>
+      <ol id="adventureLog" class="adventure-log"></ol>
+    </section>
+
+    <button id="resetButton" class="reset-button" type="button">データをリセット</button>
+    <p class="save-note">探索・強化のたびに自動保存されます</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
